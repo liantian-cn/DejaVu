@@ -228,7 +228,8 @@ local function InitializePlayerCastStatus()      -- 初始化玩家施法状态
             cell.unitChannelDuration:clearCell() -- 通道持续时间
         end
     end                                          -- updateOnEvent
-    insert(UNIT_CAST_CHANGED, { unit = "player", func = updateOnEvent })
+    -- insert(UNIT_CAST_CHANGED, { unit = "player", func = updateOnEvent })
+    insert(OnUpdateHigh, updateOnEvent)
 
 
     local function updateHighFrequency()

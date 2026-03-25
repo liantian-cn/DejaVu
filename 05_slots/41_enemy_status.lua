@@ -244,11 +244,11 @@ local function UnitStatusSequenceCreator(options)                   -- 创建一
 
         updateChannelVisual()
     end
-    if unit == "mouseover" then
-        insert(OnUpdateHigh, updateCastState)
-    else
-        insert(UNIT_CAST_CHANGED, { unit = unit, func = updateCastState })
-    end
+    -- if unit == "mouseover" then
+    insert(OnUpdateHigh, updateCastState)
+    -- else
+    -- insert(UNIT_CAST_CHANGED, { unit = unit, func = updateCastState })
+    -- end
 
     local function updateCastDuration()
         if not unitExists then

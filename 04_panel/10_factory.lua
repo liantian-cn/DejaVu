@@ -1,6 +1,6 @@
 --[[
 文件定位:
-  DejaVu 面板工厂模块，根据 Rows 构建不同类型的设置行。
+  DejaVu 面板工厂模块, 根据 Rows 构建不同类型的设置行。
 
 功能说明:
   1) 遍历 addonTable.Panel.Rows

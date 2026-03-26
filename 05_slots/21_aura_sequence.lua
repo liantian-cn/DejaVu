@@ -1,6 +1,6 @@
 --[[
 文件定位:
-  DejaVu Aura 序列槽位显示模块，负责 Buff / Debuff 的 Cell 布局与刷新。
+  DejaVu Aura 序列槽位显示模块, 负责 Buff / Debuff 的 Cell 布局与刷新。
 
 
 
@@ -73,7 +73,7 @@ local function AuraSequenceCreator(options)                                     
         })
     end
 
-    local function clearAuraCell(cell) -- 清空单个 aura 槽位，避免残留旧画面
+    local function clearAuraCell(cell) -- 清空单个 aura 槽位, 避免残留旧画面
         cell.icon:clearCell()
         cell.remaining:clearCell()
         cell.forever:clearCell()
@@ -135,7 +135,7 @@ local function AuraSequenceCreator(options)                                     
                     end
 
                     if hasExpirationTime ~= nil then                   -- 只有拿到布尔值时才做映射
-                        local foreverColor = EvaluateColorFromBoolean( -- true 透明，false 白色
+                        local foreverColor = EvaluateColorFromBoolean( -- true 透明, false 白色
                             hasExpirationTime,
                             COLOR.TRANSPARENT,
                             COLOR.WHITE
@@ -163,7 +163,7 @@ local function AuraSequenceCreator(options)                                     
                         cell.spellType:clearCell()                   -- 避免沿用上一次颜色
                     end
                 else
-                    clearAuraCell(cell) -- 取不到 aura 数据时清空，避免旧图标残留
+                    clearAuraCell(cell) -- 取不到 aura 数据时清空, 避免旧图标残留
                 end
             end
         end
@@ -171,7 +171,7 @@ local function AuraSequenceCreator(options)                                     
 
     local function updateRemaining()                                                           -- 高频补刷剩余时间颜色
         for auraInstanceID, cell in pairs(instanceIDToCell) do                                 -- 遍历当前仍显示的 aura
-            if cell ~= nil then                                                                -- 防御式判断，避免空引用
+            if cell ~= nil then                                                                -- 防御式判断, 避免空引用
                 local remaining = GetAuraDuration(unit, auraInstanceID)                        -- 重新读取剩余时间对象
 
                 if remaining ~= nil then                                                       -- 能读取到时就更新颜色

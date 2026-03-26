@@ -28,7 +28,7 @@ local function InitializePlayerBar()
     local damageAbsorbsBar = Bar:New(43, 16, 20)
     local healAbsorbsBar = Bar:New(64, 14, 20)
 
-    -- 这两条都按玩家最大生命值做刻度，直接把官方数值透传给 StatusBar。
+    -- 这两条都按玩家最大生命值做刻度, 直接把官方数值透传给 StatusBar。
     local function updateMaxHealth()
         local maxHealth = UnitHealthMax("player") or 0
         damageAbsorbsBar:setMinMaxValues(0, maxHealth)

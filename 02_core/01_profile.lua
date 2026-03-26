@@ -42,7 +42,7 @@ DejaVuSave.profiles = DejaVuSave.profiles or {}
 DejaVuSave.profiles["default"] = DejaVuSave.profiles["default"] or {}
 DejaVuSave.current_profile = DejaVuSave.current_profile or "default"
 
--- 所有config对象的注册表，用于切换profile时通知
+-- 所有config对象的注册表, 用于切换profile时通知
 local all_configs = {}
 
 local Profile = {}
@@ -52,9 +52,9 @@ function Profile.current_profile()
     return DejaVuSave.current_profile
 end
 
--- 切换profile（不存在则创建，所有值恢复默认）
+-- 切换profile（不存在则创建, 所有值恢复默认）
 function Profile.switch_profile(name)
-    -- 如果profile不存在，创建一个空表
+    -- 如果profile不存在, 创建一个空表
     if not DejaVuSave.profiles[name] then
         DejaVuSave.profiles[name] = {}
     end

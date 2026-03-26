@@ -31,7 +31,7 @@ Bar.currentValueIsSecret = nil
 ---@param x integer X坐标（以单元格为单位）
 ---@param y integer Y坐标（以单元格为单位）
 ---@param width number 宽度
----@return Bar|nil 返回Bar实例，如果父框架不存在则返回nil
+---@return Bar|nil 返回Bar实例, 如果父框架不存在则返回nil
 function Bar:New(x, y, width)
     if not addonTable.Matrix.MartixFrame then
         return nil

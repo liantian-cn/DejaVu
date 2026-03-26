@@ -1,6 +1,6 @@
 --[[
 文件定位:
-  DejaVu 面板初始化模块，负责建立面板表、颜色表与示例设置行。
+  DejaVu 面板初始化模块, 负责建立面板表、颜色表与示例设置行。
 
 功能说明:
   1) 创建 addonTable.Panel 作为面板模块入口
@@ -37,5 +37,5 @@ addonTable.Panel.COLOR = {                                                      
 }                                                                                   -- COLOR 结束
 
 addonTable.Panel.Font = "Interface\\Addons\\" .. addonName .. "\\fonts\\DejaVu.ttf" -- 自定义字体路径
-addonTable.Panel.Rows = {}                                                          -- 面板行配置容器（在加载期写入，在第二帧构建 UI）
-addonTable.Panel.DefaultApplied = {}                                                -- 记录已 set_default 的 key，确保只执行一次
+addonTable.Panel.Rows = {}                                                          -- 面板行配置容器（在加载期写入, 在第二帧构建 UI）
+addonTable.Panel.DefaultApplied = {}                                                -- 记录已 set_default 的 key, 确保只执行一次

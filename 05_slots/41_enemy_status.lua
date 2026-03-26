@@ -38,7 +38,7 @@ local UnitChannelInfo = UnitChannelInfo
 local LibStub = LibStub
 local LRC = LibStub("LibRangeCheck-3.0")
 if not LRC then
-    print("|cffff0000[单位状态]|r LibRangeCheck-3.0 未找到，模块无法工作。")
+    print("|cffff0000[单位状态]|r LibRangeCheck-3.0 未找到, 模块无法工作。")
     return
 end
 
@@ -239,7 +239,7 @@ local function UnitStatusSequenceCreator(options)                   -- 创建一
 
         updateCastVisual()
         if unitIsCasting then
-            return -- 在施法就不可能在通道，这里可以直接返回
+            return -- 在施法就不可能在通道, 这里可以直接返回
         end
 
         updateChannelVisual()

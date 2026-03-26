@@ -1,8 +1,8 @@
--- 这是个测试文件，开发阶段使用。正式使用时，应直接文件头部return
+-- 这是个测试文件, 开发阶段使用。正式使用时, 应直接文件头部return
 
 -- return nil
 
-local addonName, addonTable = ... -- luacheck: ignore addonName
+local addonName, addonTable = ...          -- luacheck: ignore addonName
 local InitUI = addonTable.Listeners.InitUI -- 初始化 UI 函数列表
 
 

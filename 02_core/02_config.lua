@@ -1,7 +1,7 @@
 --[[
 文件用途:
   Config 模块提供“按 key 获取配置对象”的能力。
-  相同 key 只会创建一个对象，并缓存复用。
+  相同 key 只会创建一个对象, 并缓存复用。
   每个配置对象支持:
   1) 设置默认值: set_default(value)
   2) 读取当前值: get_value()
@@ -10,7 +10,7 @@
 
 读取与写入规则:
   - 数据写入 DejaVuSave.profiles[当前profile][key]
-  - 当前 profile 没有这个 key 时，get_value() 返回默认值
+  - 当前 profile 没有这个 key 时, get_value() 返回默认值
   - set_value() 会触发回调
   - Profile.switch_profile() 时也会触发回调（由 Profile 模块调用 _notify）
 
@@ -49,7 +49,7 @@ local setmetatable = setmetatable
 -- 插件内引用
 local Profile = addonTable.Profile -- Profile 模块
 
--- 缓存所有config对象，相同key返回同一对象
+-- 缓存所有config对象, 相同key返回同一对象
 local config_cache = {}
 
 -- Config对象
@@ -72,7 +72,7 @@ function ConfigObj:set_default(value)
     self.default_value = value
 end
 
--- 获取当前值（优先从profile读取，没有则返回默认值）
+-- 获取当前值（优先从profile读取, 没有则返回默认值）
 function ConfigObj:get_value()
     local data = Profile._get_current_data()
     if data[self.key] ~= nil then
@@ -81,7 +81,7 @@ function ConfigObj:get_value()
     return self.default_value
 end
 
--- 设置值（写入当前profile，触发回调）
+-- 设置值（写入当前profile, 触发回调）
 function ConfigObj:set_value(value)
     local data = Profile._get_current_data()
     data[self.key] = value

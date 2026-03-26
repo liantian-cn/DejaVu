@@ -4,7 +4,7 @@
 
 
 状态:
-  waiting_real_test（今日接通，待实战验证）
+  waiting_real_test（今日接通, 待实战验证）
 ]]
 
 local addonName, addonTable = ... -- luacheck: ignore addonName -- 插件入口固定写法

@@ -34,7 +34,7 @@ local logging = addonTable.Logging
 ---@param spellID number 技能ID
 ---@return "charges"|"cooldown" cdType 冷却类型
 local function GetSpellCooldownType(spellID)
-    -- `C_Spell.GetSpellCharges()` 对充能技能返回 `SpellChargeInfo`，
+    -- `C_Spell.GetSpellCharges()` 对充能技能返回 `SpellChargeInfo`,
     -- 对非充能技能或无效技能返回 `nil`。
     local chargeInfo = GetSpellCharges(spellID)
     if chargeInfo then
@@ -45,7 +45,7 @@ local function GetSpellCooldownType(spellID)
 end
 
 --- 统计当前角色的技能书内的技能
---- 只包含当前专精的技能，不含被动技能，不含其他专精技能，不含通用技能
+--- 只包含当前专精的技能, 不含被动技能, 不含其他专精技能, 不含通用技能
 ---@return table[] spells 技能列表
 local function CollectActiveSpells()
     local spells = {}
@@ -64,7 +64,7 @@ local function CollectActiveSpells()
 
         if skillLineInfo and skillLineInfo.numSpellBookItems > 0 then
             -- 跳过通用技能标签页（通常是第一个标签页 "通用"）
-            -- 通用技能线通常是技能书索引 1，或者通过名字判断
+            -- 通用技能线通常是技能书索引 1, 或者通过名字判断
             local isGeneralSkillLine = (skillLineIndex == 1)
 
             -- 只处理非通用技能线
@@ -77,7 +77,7 @@ local function CollectActiveSpells()
                     -- 获取技能项信息
                     local itemInfo = GetSpellBookItemInfo(slotIndex, spellBank)
 
-                    -- 只处理 SPELL 类型，排除 FLYOUT、FUTURESPELL 等
+                    -- 只处理 SPELL 类型, 排除 FLYOUT、FUTURESPELL 等
                     if itemInfo and itemInfo.itemType == Enum.SpellBookItemType.Spell then
                         local spellID = itemInfo.spellID
                         if spellID then

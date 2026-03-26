@@ -14,12 +14,12 @@ local className, classFilename, classId = UnitClass("player")
 local currentSpec                       = GetSpecialization()
 if classFilename ~= "DEATHKNIGHT" then return end
 -- 插件内引用
-local InitUI = addonTable.Listeners.InitUI             -- 初始化入口列表
-local Cell   = addonTable.Cell                         -- 基础色块单元
-local Config = addonTable.Config                       -- 配置对象工厂
+local InitUI = addonTable.Listeners.InitUI -- 初始化入口列表
+local Cell   = addonTable.Cell             -- 基础色块单元
+local Config = addonTable.Config           -- 配置对象工厂
 
 
-addonTable.RangedRange = 30   -- 近战范围阈值，单位为码
+addonTable.RangedRange = 30 -- 近战范围阈值, 单位为码
 
 
 do
@@ -96,7 +96,7 @@ if currentSpec == 1 then
             type = "slider",
             key = "blood_death_strike_health_threshold",
             name = "死亡打击生命值阈值",
-            tooltip = "当前生命值低于该百分比时，使用死亡打击",
+            tooltip = "当前生命值低于该百分比时, 使用死亡打击",
             min_value = 40,
             max_value = 70,
             step = 5,
@@ -108,7 +108,7 @@ if currentSpec == 1 then
             type = "slider",
             key = "blood_death_strike_runic_power_overflow_threshold",
             name = "死亡打击泄能阈值",
-            tooltip = "当前符文能量高于该值时，使用死亡打击避免浪费",
+            tooltip = "当前符文能量高于该值时, 使用死亡打击避免浪费",
             min_value = 80,
             max_value = 120,
             step = 10,
@@ -120,7 +120,7 @@ if currentSpec == 1 then
             type = "slider",
             key = "reaper_mark_health_threshold",
             name = "死神印记血量阈值",
-            tooltip = "当敌人生命值低于此值时，就不会再使用死神印记",
+            tooltip = "当敌人生命值低于此值时, 就不会再使用死神印记",
             min_value = 10,
             max_value = 60,
             step = 10,

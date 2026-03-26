@@ -1,5 +1,5 @@
 ﻿-- DejaVu 的 luacheck 根配置。
--- 目标: 提供 Lua 5.1 + 常见 WoW 全局的基础检查环境，
+-- 目标: 提供 Lua 5.1 + 常见 WoW 全局的基础检查环境, 
 -- 特殊 API 继续优先在文件内用 `-- luacheck: globals ...` 显式声明。
 
 std = "lua51"

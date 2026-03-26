@@ -35,7 +35,7 @@ local GetItemCooldown = C_Container.GetItemCooldown
 local LibStub = LibStub
 local LRC = LibStub("LibRangeCheck-3.0")
 if not LRC then
-    print("|cffff0000[玩家状态]|r LibRangeCheck-3.0 未找到，模块无法工作。")
+    print("|cffff0000[玩家状态]|r LibRangeCheck-3.0 未找到, 模块无法工作。")
     return
 end
 
@@ -199,7 +199,7 @@ local function InitializePlayerCastStatus()      -- 初始化玩家施法状态
             cell.unitCastIcon:setCell(unitCastIcon, COLOR.SPELL_TYPE.PLAYER_SPELL) -- 单位施法图标
             cell.unitChannelIcon:clearCell()                                       -- 通道图标
             cell.unitChannelDuration:clearCell()                                   -- 通道持续时间
-            return                                                                 -- 在施法就不可在通道，这里可以返回了。
+            return                                                                 -- 在施法就不可在通道, 这里可以返回了。
         else
             inCasting = false
             cell.unitCastIcon:clearCell()     -- 单位施法图标

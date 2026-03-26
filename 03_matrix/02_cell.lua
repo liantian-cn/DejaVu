@@ -47,8 +47,8 @@ Cell.__index = Cell
 ---Cell 构造函数
 ---@param x integer X坐标（以单元格为单位）
 ---@param y integer Y坐标（以单元格为单位）
----@param backgroundColor? ColorMixin 背景颜色，默认为黑色
----@return Cell|nil 返回Cell实例，如果父框架不存在则返回nil
+---@param backgroundColor? ColorMixin 背景颜色, 默认为黑色
+---@return Cell|nil 返回Cell实例, 如果父框架不存在则返回nil
 function Cell:New(x, y, backgroundColor)
     if not addonTable.Matrix.MartixFrame then
         return nil
@@ -103,13 +103,13 @@ local function IsSecretRGBA(r, g, b, a)
 end
 
 ---比较 RGBA 是否相同（处理秘密值）
----如果任意一方包含秘密值，返回false（视为不同，需要更新）
+---如果任意一方包含秘密值, 返回false（视为不同, 需要更新）
 ---@private
 ---@param r number|string|table 红色分量
 ---@param g number|string|table 绿色分量
 ---@param b number|string|table 蓝色分量
 ---@param a number|string|table 透明度分量
----@return boolean 如果颜色相同返回true，否则返回false
+---@return boolean 如果颜色相同返回true, 否则返回false
 function Cell:_isSameRGBA(r, g, b, a)
     if self.lastR == nil then
         return false
@@ -129,7 +129,7 @@ end
 ---@param r number|string|table 红色分量
 ---@param g number|string|table 绿色分量
 ---@param b number|string|table 蓝色分量
----@param a? number|string|table 透明度分量，默认为1
+---@param a? number|string|table 透明度分量, 默认为1
 function Cell:setCellRGBA(r, g, b, a)
     if a == nil then
         a = 1
@@ -165,7 +165,7 @@ function Cell:setCell(color)
     self:setCellRGBA(color:GetRGBA())
 end
 
----设置颜色方法，根据布尔值选择颜色
+---设置颜色方法, 根据布尔值选择颜色
 ---@param isTrue boolean 是否为true值
 ---@param trueColor colorRGBA 要设置的颜色
 ---@param falseColor colorRGBA 要设置的颜色
@@ -176,9 +176,9 @@ function Cell:setCellBoolean(isTrue, trueColor, falseColor)
     self:setCell(EvaluateColorFromBoolean(isTrue, trueColor, falseColor))
 end
 
----清除颜色方法，就是恢复默认的黑色
+---清除颜色方法, 就是恢复默认的黑色
 function Cell:clearCell()
-    -- 如果颜色相同，跳过设置以提高性能
+    -- 如果颜色相同, 跳过设置以提高性能
     local color = COLOR.BLACK
     self:setCell(color)
 end
@@ -192,5 +192,5 @@ function addonTable.CreateCell(x, y, backgroundColor)
     return Cell:New(x, y, backgroundColor)
 end
 
--- 暴露 Cell 类到 addonTable，方便继承和扩展
+-- 暴露 Cell 类到 addonTable, 方便继承和扩展
 addonTable.Cell = Cell

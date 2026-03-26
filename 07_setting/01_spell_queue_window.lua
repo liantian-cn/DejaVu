@@ -16,11 +16,11 @@ local slider_row         = { -- 滑块示例行
     type = "slider", -- 设置类型
     key = "spell_queue_window", -- 行标识
     name = "延迟窗口", -- 标题文本
-    tooltip = "延迟窗口的时间，单位ms，这个值越小，按键越晚", -- 提示信息
-    min_value = 100, -- 最小值
+    tooltip = "延迟窗口的时间, 单位ms, 这个值越小, 按键越晚", -- 提示信息
+    min_value = 200, -- 最小值
     max_value = 400, -- 最大值
     step = 10, -- 步进
-    default_value = 200, -- 默认值
+    default_value = 300, -- 默认值
     bind_config = spell_queue_window, -- 绑定的配置对象
     -- callback = callback, -- 回调函数
 } -- slider_row 结束

@@ -46,7 +46,7 @@ CharCell.__index = CharCell
 ---CharCell 构造函数
 ---@param x integer X坐标（以单元格为单位）
 ---@param y integer Y坐标（以单元格为单位）
----@return CharCell|nil 返回CharCell实例，如果父框架不存在则返回nil
+---@return CharCell|nil 返回CharCell实例, 如果父框架不存在则返回nil
 function CharCell:New(x, y)
     if not addonTable.Matrix.MartixFrame then
         return nil
@@ -106,30 +106,30 @@ function CharCell:_initialize(x, y)
 end
 
 ---比较文本是否相同（处理秘密值）
----如果任意文本是秘密值，返回false（视为不同，需要更新）
----如果都不是秘密值，直接比较
+---如果任意文本是秘密值, 返回false（视为不同, 需要更新）
+---如果都不是秘密值, 直接比较
 ---@private
 ---@param text string 要比较的文本
----@return boolean 如果文本相同返回true，否则返回false
+---@return boolean 如果文本相同返回true, 否则返回false
 function CharCell:_isSameText(text)
-    -- 如果当前没有保存的文本，视为不同
+    -- 如果当前没有保存的文本, 视为不同
     if not self.lastText then
         return false
     end
 
-    -- 如果任意一方是秘密值，无法比较，视为不同
+    -- 如果任意一方是秘密值, 无法比较, 视为不同
     if self.lastTextIsSecret or issecretvalue(text) then
         return false
     end
 
-    -- 都不是秘密值，直接比较
+    -- 都不是秘密值, 直接比较
     return self.lastText == text
 end
 
 ---设置单元格方法（设置文本）
 ---@param text string 要显示的文本
 function CharCell:setCell(text)
-    -- 如果文本相同，跳过设置以提高性能
+    -- 如果文本相同, 跳过设置以提高性能
     if self:_isSameText(text) then
         return
     end
@@ -157,5 +157,5 @@ function addonTable.CreateCharCell(x, y)
     return CharCell:New(x, y)
 end
 
--- 暴露 CharCell 类到 addonTable，方便继承和扩展
+-- 暴露 CharCell 类到 addonTable, 方便继承和扩展
 addonTable.CharCell = CharCell

@@ -51,7 +51,7 @@ BadgeCell.__index = BadgeCell
 ---BadgeCell 构造函数
 ---@param x integer X坐标（以单元格为单位）
 ---@param y integer Y坐标（以单元格为单位）
----@return BadgeCell|nil 返回BadgeCell实例，如果父框架不存在则返回nil
+---@return BadgeCell|nil 返回BadgeCell实例, 如果父框架不存在则返回nil
 function BadgeCell:New(x, y)
     if not addonTable.Matrix.MartixFrame then
         return nil
@@ -119,49 +119,49 @@ function BadgeCell:_initialize(x, y)
 end
 
 ---比较图标是否相同（处理秘密值）
----如果任意图标是秘密值，返回false（视为不同，需要更新）
----如果都不是秘密值，直接比较
+---如果任意图标是秘密值, 返回false（视为不同, 需要更新）
+---如果都不是秘密值, 直接比较
 ---@private
 ---@param icon string|number 要比较的图标
----@return boolean 如果图标相同返回true，否则返回false
+---@return boolean 如果图标相同返回true, 否则返回false
 function BadgeCell:_isSameIcon(icon)
-    -- 如果当前没有保存的图标，视为不同
+    -- 如果当前没有保存的图标, 视为不同
     if not self.lastIcon then
         return false
     end
 
-    -- 如果任意一方是秘密值，无法比较，视为不同
+    -- 如果任意一方是秘密值, 无法比较, 视为不同
     if self.lastIconIsSecret or issecretvalue(icon) then
         return false
     end
 
-    -- 都不是秘密值，直接比较
+    -- 都不是秘密值, 直接比较
     return self.lastIcon == icon
 end
 
 ---比较颜色是否相同（处理秘密值）
----如果任意颜色是秘密值，返回false（视为不同，需要更新）
----如果都不是秘密值，使用IsEqualTo比较
+---如果任意颜色是秘密值, 返回false（视为不同, 需要更新）
+---如果都不是秘密值, 使用IsEqualTo比较
 ---@private
 ---@param color ColorMixin|nil 要比较的颜色
----@return boolean 如果颜色相同返回true，否则返回false
+---@return boolean 如果颜色相同返回true, 否则返回false
 function BadgeCell:_isSameBadgeColor(color)
-    -- 如果当前没有保存的颜色，视为不同
+    -- 如果当前没有保存的颜色, 视为不同
     if not self.lastBadgeColor then
         return false
     end
 
-    -- 如果要比较的颜色是nil，视为不同
+    -- 如果要比较的颜色是nil, 视为不同
     if not color then
         return false
     end
 
-    -- 如果任意一方是秘密值，无法比较，视为不同
+    -- 如果任意一方是秘密值, 无法比较, 视为不同
     if self.lastBadgeColorIsSecret or issecretvalue(color.r) then
         return false
     end
 
-    -- 都不是秘密值，使用ColorMixin的IsEqualTo方法
+    -- 都不是秘密值, 使用ColorMixin的IsEqualTo方法
     return self.lastBadgeColor:IsEqualTo(color)
 end
 
@@ -193,7 +193,7 @@ function BadgeCell:setCell(icon, color)
     end
 end
 
----清除单元格方法（隐藏图标和脚标，显示底色）
+---清除单元格方法（隐藏图标和脚标, 显示底色）
 function BadgeCell:clearCell()
     self.Icon:Hide()
     self.BadgeFrame:Hide()
@@ -212,5 +212,5 @@ function addonTable.CreateBadgeCell(x, y)
     return BadgeCell:New(x, y)
 end
 
--- 暴露 BadgeCell 类到 addonTable，方便继承和扩展
+-- 暴露 BadgeCell 类到 addonTable, 方便继承和扩展
 addonTable.BadgeCell = BadgeCell

@@ -46,8 +46,8 @@ MegaCell.__index = MegaCell
 ---MegaCell 构造函数
 ---@param x integer X坐标（以单元格为单位）
 ---@param y integer Y坐标（以单元格为单位）
----@param backgroundColor? ColorMixin 背景颜色，默认为黑色
----@return MegaCell|nil 返回MegaCell实例，如果父框架不存在则返回nil
+---@param backgroundColor? ColorMixin 背景颜色, 默认为黑色
+---@return MegaCell|nil 返回MegaCell实例, 如果父框架不存在则返回nil
 function MegaCell:New(x, y, backgroundColor)
     if not addonTable.Matrix.MartixFrame then
         return nil
@@ -108,7 +108,7 @@ function MegaCell:setCell(icon)
     -- 检查是否为秘密值
     local isSecret = issecretvalue(icon)
 
-    -- 如果图标相同且都不是秘密值，跳过设置以提高性能
+    -- 如果图标相同且都不是秘密值, 跳过设置以提高性能
     if not isSecret and not self.lastIconIsSecret and self.lastIcon == icon then
         return
     end
@@ -138,5 +138,5 @@ function addonTable.CreateMegaCell(x, y, backgroundColor)
     return MegaCell:New(x, y, backgroundColor)
 end
 
--- 暴露 MegaCell 类到 addonTable，方便继承和扩展
+-- 暴露 MegaCell 类到 addonTable, 方便继承和扩展
 addonTable.MegaCell = MegaCell

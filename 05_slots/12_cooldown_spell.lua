@@ -141,6 +141,6 @@ local function InitializeCooldownFrame()
     table.insert(SPELLS_CHANGED, updateUnknown)   -- 技能变更时更新法术书收录状态
     table.insert(OnUpdateHigh, updateRemaining)   -- 高频更新冷却剩余时间
     table.insert(OnUpdateLow, updateOverlayed)    -- 低频更新技能高亮状态
-    table.insert(OnUpdateLow, updateUnusable)     -- 低频更新技能不可施放状态
+    table.insert(OnUpdateHigh, updateUnusable)    -- 低频更新技能不可施放状态
 end
 table.insert(InitUI, InitializeCooldownFrame)     -- 初始化时创建冷却技能槽位

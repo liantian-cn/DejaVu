@@ -145,6 +145,7 @@ local function InitializeChargeFrame()
     table.insert(SPELLS_CHANGED, updateRemaining) -- 技能变更时更新充能剩余时间
     table.insert(SPELLS_CHANGED, updateOverlayed) -- 技能变更时更新高亮状态
     table.insert(SPELLS_CHANGED, updateUnknown)   -- 技能变更时更新法术书收录状态
+    table.insert(OnUpdateHigh, updateIcon)        -- 高频更新充能剩余时间
     table.insert(OnUpdateHigh, updateRemaining)   -- 高频更新充能剩余时间
     table.insert(OnUpdateLow, updateOverlayed)    -- 低频更新技能高亮状态
     table.insert(OnUpdateLow, updateUnusable)     -- 低频更新技能不可施放状态
